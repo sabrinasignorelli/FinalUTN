@@ -121,3 +121,7 @@ img {
   background: chartreuse;
   border-color: chartreuse;
 }
+
+h2 {
+  padding-block: 50px;
+}
