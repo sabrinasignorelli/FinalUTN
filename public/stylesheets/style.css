@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+
+
+
+body {
+
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  color: chartreuse;
+  background: #071b01;
+  min-width: 480px;
+
+}
+
+h5 {
+  color: chartreuse;
+  font-size: small;
+}
+
+.carousel {
+  width: fit-content;
+  min-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.carousel-inner {
+  max-width: 624px;
+}
+
+a {
+  color: chartreuse;
+}
+
+.justify-content-center {
+  padding-top: 20px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: chartreuse; /* Green */
+  border: none;
+  color: rgb(11, 58, 19);
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.card {
+  background-color: #071b01;
+  min-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-block: 100px;
+}
+
+.card-body {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 70%;
+  padding: 10px;
+}
+
+.card-img, .card-img-bottom {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 50%;
+  min-width: 70%;
+}
+
+.no-gutters>.col, .no-gutters>[class*=col-] {
+  padding-block: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+img {
+  width: 30%;
+}
+
+.btn-primary {
+  color: #071b01;
+  background-color: chartreuse;
+  border-color: chartreuse;
+}
+
+.col {
+  max-width: 50%;
+}
+
+#Sabrina {
+  max-width: 70px;
+  padding-bottom: 30px;
+}
+
+.btn-link {
+  color: chartreuse;
+  box-shadow: 0 0 0 0.2rem chartreuse;
+
+}
+
+.btn-link:hover {
+  color: chartreuse;
+}
+
+.btn.focus, .btn:focus {
+  box-shadow: 0 0 0 0.2rem chartreuse;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  color: #071b01;
+  background: chartreuse;
+  border-color: chartreuse;
+}
