@@ -13,18 +13,18 @@
 </head>
 
 <body>
-  <ul class="nav nav-pills justify-content-center">
+  <ul id="navbar" class="nav nav-pills justify-content-center">
     <li class="nav-item">
-      <a class="nav-link active" href="#">Historia</a>
+      <a class="nav-link active" href="#historia">Historia</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Sobre Mi</a>
+      <a class="nav-link" href="#OO">Sobre Mi</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Tip De Diseño</a>
+      <a class="nav-link" href="#Novedad">Novedad</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Hablame</a>
+      <a class="nav-link" href="#enviar">Hablame</a>
     </li>
   </ul>
 
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-  <div id="card" class="card mb-3" style="max-width: 540px;">
+  <div id="historia" class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
       <div class="col-md-4">
         <img id="skull" src="images/skull.svg" class="card-img" alt="...">
@@ -60,11 +60,11 @@
     <div class="card-body2">
        <img id="OO" src="images/OO.svg" class="card-img" alt="...">
       <p class="card-text">Este es el resultado de tanto esfuerzo...</p>
-      <a href="#" class="btn btn-primary">Pero... ¿¿¿Quién soy???</a>
+      <a href="#SobreMi" class="btn btn-primary">Pero... ¿¿¿Quién soy???</a>
     </div>
   </div>
   
-  <div class="container">
+  <div id="SobreMi" class="container">
     <div class="row">
       <div class="col">
         <div class="embed-responsive embed-responsive-16by9">
@@ -83,51 +83,71 @@
 
   <div class="accordion" id="accordionExample">
   <div class="card">
-    <div class="card-header" id="headingOne">
+    <div class="card-header" id="Novedad">
       <h2 class="mb-0">
         <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
             <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z"/>
-          </svg>Un consejo salvaje ha aparecido
+          </svg>Una novedad salvaje ha aparecido
         </button>
       </h2>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body text-center">
-        Pone primero el valor de tu tiempo, creatividad y esfuerzo
+        La base de datos fue creada!
       </div>
     </div>
   </div>
 
   <div>
-    <h2 class="text-center">Hablame para mas consejos</h2>
-      <form>
-          <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Nombre">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Apellido">
-            </div>
-          </div>
+    <h2 class="text-center">Hablame para mas Novedades</h2>
+    <form action="/" method="post">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre"
+          name="nombre">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Apellido"
+          name="apellido">
+        </div>
+        </div>
         <div class="form-group">
           <label for="exampleFormControlInput1">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com">
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com"
+          name="email">
         </div>
           <label for="exampleFormControlTextarea1">Mensaje</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensaje"></textarea>
+      </div>
+        <div>
+          <button id="enviar" type="submit" class="btn btn-primary">Enviar</button>
         </div>
-      </form>
+    </form>
   </div>
+
+  <div class="footer">
+    <a href="#navbar">
+      <img id="subirarriba" src="images/subirarriba.svg" alt="...">
+    </a>
+  </div>
+
+
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js">
+  </script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+
 </body>
 
 </html>
