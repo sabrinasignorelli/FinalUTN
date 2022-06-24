@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+//var session = require('express-session');
+
 require('dotenv').config();
 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//const { emitWarning } = require('process');
 
 var app = express();
 
@@ -22,8 +25,37 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//app.use(session({
+//  secret: 'holaquetal2022',
+//  resave: false,
+//  saveUninitialized: true
+//}))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//app.get('/', function (req, res) {
+//  var conocido = Boolean(req.session.nombre);
+
+//  res.render('index', {
+//    tittle: 'Sesiones',
+//    conocido: conocido,
+//    nombre: req.session.nombre
+//  });
+//
+//};)
+
+//app.post('/ingresar', function(req, res) {
+// if (req.body.nombre) {
+//    req.session.nombre = req.body.nombre
+//  }
+//  res.redirect('/');
+//});
+
+//app.get('salir', function (req, res) {
+//  req.session.destroy(),
+//  res.redirect('/');
+//});
 
 //select
 // pool.query('select * from Novedades').then(function (resultados) {
