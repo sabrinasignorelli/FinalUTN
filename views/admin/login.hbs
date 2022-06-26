@@ -1,0 +1,18 @@
+<div>
+    <form id="form1" action="/admin/login" method="post">
+        <div class="form-group">
+            <label for="usuarios">usuario</label>
+            <input type="text" class="form-control" id="usuarios" aria-describedby="emailHelp" name="usuarios">
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <button id="button1" type="submit" class="btn btn-primary">Entrar🙈</button>
+    </form>
+    {{#if error}}
+        <p>usuario y contraseña incorrectos</p>
+    {{/if}}
+</div>
+
+<div class="bg"></div>

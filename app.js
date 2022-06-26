@@ -8,9 +8,12 @@ var logger = require('morgan');
 
 require('dotenv').config();
 
+var pool = require('./modelos/bd');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/novedades');
 //const { emitWarning } = require('process');
 
 var app = express();
@@ -25,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//const session = require('express-session');
 //app.use(session({
 //  secret: 'holaquetal2022',
 //  resave: false,
@@ -33,6 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin/login', loginRouter);
+app.use('/admin/novedades', adminRouter);
 
 //app.get('/', function (req, res) {
 //  var conocido = Boolean(req.session.nombre);
@@ -42,8 +48,8 @@ app.use('/users', usersRouter);
 //    conocido: conocido,
 //    nombre: req.session.nombre
 //  });
-//
-//};)
+
+//});
 
 //app.post('/ingresar', function(req, res) {
 // if (req.body.nombre) {
@@ -52,9 +58,31 @@ app.use('/users', usersRouter);
 //  res.redirect('/');
 //});
 
-//app.get('salir', function (req, res) {
+//app.get('/salir', function (req, res) {
 //  req.session.destroy(),
 //  res.redirect('/');
+//});
+
+//app.use(function (req, res, next) {
+//  if (!req.session.vistas) {
+//    req.session.vistas = {};
+//  }
+
+//  if (!req.session.vistas[req.originalUrl]) {
+//    req.session.vistas[req.originalUrl] = 1;
+//  } else {
+//    req.session.vistas[req.originalUrl]++;
+//  }
+//  console.log(req.session.vistas);
+
+//  next();
+//});
+
+//app.get('/pagina1', function(req,res) {
+//  res.render('pagina', {
+//    nombre: 'pagina1',
+//    vistas: req.session.vistas[req.originalUrl]
+//  });
 //});
 
 //select
