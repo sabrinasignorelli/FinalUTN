@@ -1,15 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var novedadesModel = require('../modelos/novedadesModel');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function (req, res, next) {
+
+  var novedades = await novedadesModel.getNovedades()
+  
+  res.render('index', {
+    novedades
+  });
 });
 
 var nodemailer = require('nodemailer');
 
-router.post('/', async(req, res, next) => {
+router.post('/', async (req, res, next) => {
 
   var nombre = req.body.nombre;
   var apellido = req.body.apellido;
@@ -18,7 +24,7 @@ router.post('/', async(req, res, next) => {
 
   console.log(req.body)
 
-  var obj= {
+  var obj = {
     to: 'sabri.signorelli@gmail.com',
     subject: 'Quiero otra novedad',
     html: nombre + " se contacto a través de la web y quiere saber mas novedades a este correo: " + email + ". <br> Además, hizo este comentario: " + mensaje + ". <br>Su apellido es: " + apellido
