@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 var novedadesModel = require('../../modelos/novedadesModel');
 
+//router.get('/', function (req, res, next) {
+//  res.render('admin/novedades', {
+//    layout: 'admin/layout',
+//    usuario: req.session.nombre,
+//  })
+//});
+
 /* GET home page. */
 router.get('/', async function(req, res, next) {
 

@@ -18,16 +18,16 @@ router.get('/logout', function (req, res, next) {
 
 router.post('/', async (req, res, next) => {
     try {
-        var usuarios = req.body.usuarios;
+        var usuario = req.body.usuario;
         var password = req.body.password;
 
         console.log(req.body);
 
-        var data = await usuariosModel.getUserAndPassword(usuarios, password);
+        var data = await usuariosModel.getUserByUsernameAndPassword(usuario, password);
 
         if (data != undefined) {
-//            req.session.id.usuarios = data.id;
-//            req.session.usuarios = data.usuarios;
+            req.session.id.usuarios = data.id;
+            req.session.usuarios = data.usuario;
             res.redirect('/admin/novedades');
         } else {
             res.render('admin/login', {
